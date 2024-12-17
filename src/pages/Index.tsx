@@ -2,6 +2,7 @@ import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import IntroSection from "../components/IntroSection";
 import CoreComponents from "../components/CoreComponents";
+import VideoSection from "../components/VideoSection";
 
 const Index = () => {
   return (
@@ -10,6 +11,7 @@ const Index = () => {
       <Hero />
       <IntroSection />
       <CoreComponents />
+      <VideoSection />
     </div>
   );
 };
