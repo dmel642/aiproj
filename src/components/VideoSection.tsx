@@ -1,6 +1,6 @@
 const VideoSection = () => {
   return (
-    <section className="relative h-[50vh] overflow-hidden">
+    <section className="relative h-[70vh] overflow-hidden">
       {/* Video Background */}
       <div className="absolute inset-0">
         <video
@@ -20,7 +20,7 @@ const VideoSection = () => {
       <div className="relative h-full flex items-center justify-center">
         <div className="text-center">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-morphis-silver mb-4">
-            Revolutionizing the Future of AI
+            The Future of AI
           </h2>
           <div className="w-24 h-1 bg-morphis-blue mx-auto rounded-full animate-glow"></div>
         </div>
