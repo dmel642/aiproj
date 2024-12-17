@@ -3,6 +3,7 @@ import Hero from "../components/Hero";
 import IntroSection from "../components/IntroSection";
 import CoreComponents from "../components/CoreComponents";
 import LifecycleSection from "../components/LifecycleSection";
+import Footer from "../components/Footer";
 
 const Index = () => {
   return (
@@ -12,6 +13,7 @@ const Index = () => {
       <IntroSection />
       <CoreComponents />
       <LifecycleSection />
+      <Footer />
     </div>
   );
 };
