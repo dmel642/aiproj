@@ -18,7 +18,7 @@ const Navbar = () => {
     <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-morphis-navy/90 backdrop-blur-sm' : 'bg-transparent'}`}>
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center space-x-2">
+          <Link to="/" className="hidden md:flex items-center space-x-2">
             <img src="/lovable-uploads/5400ecfa-f945-4ef9-9d0d-aa2ce6fcc62d.png" alt="Morphis" className="h-8 w-8 md:h-10 md:w-10" />
             <span className="text-morphis-silver font-bold text-lg md:text-xl">Morphis</span>
           </Link>
