@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
-import { Factory, Server, ChartLine } from "lucide-react";
+import { Factory, Server, Eye } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
@@ -42,7 +42,7 @@ const Projects = () => {
         "Trend Anticipation: Detects emerging trends before they happen",
         "Strategic Scenario Simulation: Runs millions of what-if scenarios"
       ],
-      icon: ChartLine,
+      icon: Eye,
       isComingSoon: true
     }
   ];
