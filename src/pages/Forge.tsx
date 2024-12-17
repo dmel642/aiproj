@@ -5,6 +5,10 @@ import { Card } from "@/components/ui/card";
 import { Brain, Bot, ChartBar, Database, FileSearch, Shield } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 import { cn } from "@/lib/utils";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Label } from "@/components/ui/label";
 
 const aiCategories = [
   {
@@ -47,7 +51,13 @@ const aiCategories = [
 
 const Forge = () => {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const [isGenerating, setIsGenerating] = useState(false);
+  const [showConfig, setShowConfig] = useState(false);
+  const [isPublishing, setIsPublishing] = useState(false);
+  const [agentConfig, setAgentConfig] = useState({
+    instructions: "",
+    personality: "",
+    allowFeedback: true
+  });
   const { toast } = useToast();
 
   const handleGenerate = () => {
@@ -59,18 +69,29 @@ const Forge = () => {
       });
       return;
     }
+    setShowConfig(true);
+  };
 
-    setIsGenerating(true);
-    console.log("Generating AI for category:", selectedCategory);
-
-    // Simulate AI generation
-    setTimeout(() => {
-      setIsGenerating(false);
+  const handlePublish = () => {
+    if (!agentConfig.instructions || !agentConfig.personality) {
       toast({
-        title: "AI Generated Successfully",
-        description: "Your new AI agent is ready for deployment",
+        title: "Missing Information",
+        description: "Please fill in all required fields",
+        variant: "destructive"
       });
-    }, 3000);
+      return;
+    }
+
+    setIsPublishing(true);
+    // Simulate publishing delay
+    setTimeout(() => {
+      setIsPublishing(false);
+      toast({
+        title: "Error",
+        description: "System overloaded due to high usage. Please try again later...",
+        variant: "destructive"
+      });
+    }, 2000);
   };
 
   return (
@@ -113,21 +134,64 @@ const Forge = () => {
             })}
           </div>
 
-          <div className="flex justify-center">
-            <Button
-              onClick={handleGenerate}
-              disabled={!selectedCategory || isGenerating}
-              className="bg-morphis-blue hover:bg-morphis-blue/90 text-morphis-dark font-semibold px-8 py-6"
-            >
-              {isGenerating ? (
-                <>
-                  <span className="animate-pulse">Generating AI Agent...</span>
-                </>
-              ) : (
-                "Generate AI Agent"
-              )}
-            </Button>
-          </div>
+          {!showConfig ? (
+            <div className="flex justify-center">
+              <Button
+                onClick={handleGenerate}
+                disabled={!selectedCategory}
+                className="bg-morphis-blue hover:bg-morphis-blue/90 text-morphis-dark font-semibold px-8 py-6"
+              >
+                Generate AI Agent
+              </Button>
+            </div>
+          ) : (
+            <Card className="p-6 bg-morphis-navy border-morphis-blue/20">
+              <div className="space-y-6">
+                <div className="space-y-2">
+                  <Label htmlFor="instructions" className="text-morphis-silver">Instructions</Label>
+                  <Textarea
+                    id="instructions"
+                    placeholder="Enter detailed instructions for your AI agent..."
+                    className="min-h-[100px] bg-morphis-dark/50 border-morphis-blue/20 text-morphis-silver"
+                    value={agentConfig.instructions}
+                    onChange={(e) => setAgentConfig(prev => ({ ...prev, instructions: e.target.value }))}
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="personality" className="text-morphis-silver">Personality</Label>
+                  <Textarea
+                    id="personality"
+                    placeholder="Describe the personality traits of your AI agent..."
+                    className="min-h-[100px] bg-morphis-dark/50 border-morphis-blue/20 text-morphis-silver"
+                    value={agentConfig.personality}
+                    onChange={(e) => setAgentConfig(prev => ({ ...prev, personality: e.target.value }))}
+                  />
+                </div>
+
+                <div className="flex items-center space-x-2">
+                  <Checkbox
+                    id="allowFeedback"
+                    checked={agentConfig.allowFeedback}
+                    onCheckedChange={(checked) => 
+                      setAgentConfig(prev => ({ ...prev, allowFeedback: checked as boolean }))
+                    }
+                  />
+                  <Label htmlFor="allowFeedback" className="text-morphis-silver">
+                    Allow user feedback for self-modification
+                  </Label>
+                </div>
+
+                <Button
+                  onClick={handlePublish}
+                  disabled={isPublishing}
+                  className="w-full bg-morphis-blue hover:bg-morphis-blue/90 text-morphis-dark font-semibold"
+                >
+                  {isPublishing ? "Publishing..." : "Publish Agent"}
+                </Button>
+              </div>
+            </Card>
+          )}
         </div>
       </div>
     </div>
