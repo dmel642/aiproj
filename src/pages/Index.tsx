@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import IntroSection from "../components/IntroSection";
+import CoreComponents from "../components/CoreComponents";
 
 const Index = () => {
   return (
@@ -8,6 +9,7 @@ const Index = () => {
       <Navbar />
       <Hero />
       <IntroSection />
+      <CoreComponents />
     </div>
   );
 };
