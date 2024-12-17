@@ -5,6 +5,8 @@ import Forge from "./pages/Forge";
 import { Toaster } from "@/components/ui/toaster";
 
 function App() {
+  console.log("App rendering, current path:", window.location.pathname);
+  
   return (
     <Router>
       <Routes>
