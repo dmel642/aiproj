@@ -88,7 +88,7 @@ const Forge = () => {
       setIsPublishing(false);
       toast({
         title: "Error",
-        description: "System overloaded due to high usage. Please try again later...",
+        description: "System overloaded due to high usage. Please try again later.",
         variant: "destructive"
       });
     }, 2000);
