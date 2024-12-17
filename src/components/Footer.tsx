@@ -43,7 +43,7 @@ const Footer = () => {
 
         <div className="max-w-md mx-auto mb-12">
           <p className="text-center text-lg mb-6 text-morphis-silver/80">
-            Stay updated on Morphis - the AI that evolves and improves itself. Sign up for our mailing list to receive the latest updates!
+            Sign up for our mailing list to receive the latest updates!
           </p>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col space-y-4">
