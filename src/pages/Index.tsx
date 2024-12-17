@@ -2,7 +2,7 @@ import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import IntroSection from "../components/IntroSection";
 import CoreComponents from "../components/CoreComponents";
-import VideoSection from "../components/VideoSection";
+import LifecycleSection from "../components/LifecycleSection";
 
 const Index = () => {
   return (
@@ -11,7 +11,7 @@ const Index = () => {
       <Hero />
       <IntroSection />
       <CoreComponents />
-      <VideoSection />
+      <LifecycleSection />
     </div>
   );
 };
