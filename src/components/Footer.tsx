@@ -1,4 +1,4 @@
-import { Github, X } from "lucide-react";
+import { Github, Twitter } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
@@ -42,6 +42,9 @@ const Footer = () => {
         </div>
 
         <div className="max-w-md mx-auto mb-12">
+          <p className="text-center text-lg mb-6 text-morphis-silver/80">
+            Stay updated on Morphis - the AI that evolves and improves itself
+          </p>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col space-y-4">
               <FormField
@@ -90,7 +93,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <X className="h-5 w-5" />
+                <Twitter className="h-5 w-5" />
               </Link>
             </div>
           </div>
