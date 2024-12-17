@@ -59,8 +59,8 @@ const LifecycleSection = () => {
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-morphis-silver text-center mb-16">
           AI Lifecycle
         </h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {phases.map((phase, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {phases.slice(0, 3).map((phase, index) => (
             <div
               key={phase.title}
               className="bg-morphis-navy/50 backdrop-blur-sm p-6 rounded-lg border border-morphis-blue/20 
@@ -68,6 +68,34 @@ const LifecycleSection = () => {
                          animate-fade-in"
               style={{
                 animationDelay: `${index * 200}ms`,
+              }}
+            >
+              <div className="flex items-center gap-4 mb-4">
+                <div className="p-3 bg-morphis-blue/10 rounded-lg">
+                  <phase.icon
+                    className="w-6 h-6 text-morphis-blue animate-float"
+                    strokeWidth={1.5}
+                  />
+                </div>
+                <h3 className="text-xl font-semibold text-morphis-silver">
+                  {phase.title}
+                </h3>
+              </div>
+              <p className="text-morphis-silver/80 leading-relaxed">
+                {phase.description}
+              </p>
+            </div>
+          ))}
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mt-8">
+          {phases.slice(3).map((phase, index) => (
+            <div
+              key={phase.title}
+              className="bg-morphis-navy/50 backdrop-blur-sm p-6 rounded-lg border border-morphis-blue/20 
+                         transform hover:scale-105 transition-all duration-300 
+                         animate-fade-in"
+              style={{
+                animationDelay: `${(index + 3) * 200}ms`,
               }}
             >
               <div className="flex items-center gap-4 mb-4">
