@@ -1,4 +1,4 @@
-import { Gitbook, X } from "lucide-react";
+import { Book, X } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -32,7 +32,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Gitbook className="h-5 w-5" />
+                <Book className="h-5 w-5" />
               </Link>
               <Link 
                 to="https://x.com/MorphisProject" 
