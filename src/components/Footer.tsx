@@ -1,4 +1,4 @@
-import { Github, Twitter } from "lucide-react";
+import { Gitbook, X } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -27,20 +27,20 @@ const Footer = () => {
             </p>
             <div className="flex space-x-6">
               <Link 
-                to="https://github.com" 
+                to="https://morphis.gitbook.io/morphis" 
                 className="text-morphis-silver hover:text-morphis-blue transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Github className="h-5 w-5" />
+                <Gitbook className="h-5 w-5" />
               </Link>
               <Link 
-                to="https://twitter.com" 
+                to="https://x.com/MorphisProject" 
                 className="text-morphis-silver hover:text-morphis-blue transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Twitter className="h-5 w-5" />
+                <X className="h-5 w-5" />
               </Link>
             </div>
           </div>
