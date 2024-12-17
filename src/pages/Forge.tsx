@@ -91,7 +91,7 @@ const Forge = () => {
         description: "System overloaded due to high usage. Please try again later.",
         variant: "destructive"
       });
-    }, 2000);
+    }, 5000);
   };
 
   return (
