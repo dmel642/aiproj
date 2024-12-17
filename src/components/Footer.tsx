@@ -1,7 +1,28 @@
-import { Book, X } from "lucide-react";
+import { Github, X } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+import { Form, FormControl, FormField, FormItem } from "./ui/form";
+import { useForm } from "react-hook-form";
+import { useToast } from "./ui/use-toast";
 
 const Footer = () => {
+  const { toast } = useToast();
+  const form = useForm({
+    defaultValues: {
+      email: "",
+    },
+  });
+
+  const onSubmit = (data: { email: string }) => {
+    console.log("Email submitted:", data.email);
+    toast({
+      title: "Thanks for subscribing!",
+      description: "You'll receive updates about Morphis soon.",
+    });
+    form.reset();
+  };
+
   return (
     <footer className="bg-morphis-navy/90 text-morphis-silver py-16 mt-20">
       <div className="container mx-auto px-6">
@@ -19,6 +40,35 @@ const Footer = () => {
             </p>
           </div>
         </div>
+
+        <div className="max-w-md mx-auto mb-12">
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col space-y-4">
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input
+                        type="email"
+                        placeholder="Enter your email for updates"
+                        className="bg-morphis-dark/50 border-morphis-blue/20 text-morphis-silver placeholder:text-morphis-silver/50"
+                        {...field}
+                      />
+                    </FormControl>
+                  </FormItem>
+                )}
+              />
+              <Button 
+                type="submit"
+                className="bg-morphis-blue text-morphis-navy hover:bg-morphis-blue/90"
+              >
+                Subscribe
+              </Button>
+            </form>
+          </Form>
+        </div>
         
         <div className="border-t border-morphis-blue/20 pt-8 mt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
@@ -32,7 +82,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Book className="h-5 w-5" />
+                <Github className="h-5 w-5" />
               </Link>
               <Link 
                 to="https://x.com/MorphisProject" 
