@@ -71,7 +71,7 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-6 pt-32 pb-20">
         <div className="flex flex-col items-center text-center">
           <img 
-            src="/lovable-uploads/5400ecfa-f945-4ef9-9d0d-aa2ce6fcc62d.png" 
+            src="/lovable-uploads/4e38ca8b-c6ce-49bc-a683-afe9c6e9831b.png" 
             alt="Morphis Logo" 
             className="w-32 h-32 mb-8 animate-float"
           />
