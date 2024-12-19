@@ -50,7 +50,7 @@ const Navbar = () => {
             </Link>
             
             <a 
-              href="https://pump.fun/coin/J3zN1vEqS5KzQCuyYNoZcoi4cZAH7vUJwghv2Bspump" 
+              href="https://pump.fun" 
               target="_blank" 
               rel="noopener noreferrer"
               className="bg-morphis-blue text-morphis-navy px-3 py-1.5 md:px-4 md:py-2 rounded-lg hover:bg-morphis-pink transition-colors flex items-center text-sm md:text-base whitespace-nowrap"
