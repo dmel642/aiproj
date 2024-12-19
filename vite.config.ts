@@ -7,18 +7,6 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
-    // Ensure proper SPA routing in development
-    proxy: {
-      '/': {
-        target: 'http://localhost:8080',
-        bypass: (req) => {
-          // Return index.html for all non-asset requests
-          if (!req.url.includes('.')) {
-            return '/index.html';
-          }
-        },
-      },
-    },
   },
   preview: {
     port: 8080,
