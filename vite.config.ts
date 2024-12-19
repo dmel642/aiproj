@@ -13,7 +13,7 @@ export default defineConfig(({ mode }) => ({
         target: 'http://localhost:8080',
         bypass: (req) => {
           // Return index.html for all non-asset requests
-          if (!req.url.includes('.')) {
+          if (req.url && !req.url.includes('.')) {
             return '/index.html';
           }
         },
